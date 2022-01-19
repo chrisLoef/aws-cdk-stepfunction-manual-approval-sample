@@ -1,8 +1,21 @@
-# Welcome to your CDK TypeScript project!
+# AWS Step Functions Manual Approval Example
 
-This is a blank project for TypeScript development with CDK.
+This is a Project in CDK that aligns to an old AWS Blog Post regarding the Usage of an manual approval integration through an Activity in AWS Step Functions (Article: https://aws.amazon.com/de/blogs/compute/implementing-serverless-manual-approval-steps-in-aws-step-functions-and-amazon-api-gateway/)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+There's also another CloudFormation Template that should fully work by AWS. I didn't tested it and found it after i set up everything.
+- https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-human-approval.html#human-approval-deploy
+
+# Prerequisites
+- Install node + npm
+- Install CDK CLI
+- do `npm install` after copying data
+- go to ses in the region where you want to deploy it and verify your email address for testing (as this is a sandbox account it's not possible to send emails to anyone. You also need to verify the received email)
+
+# Deployment
+- `npm install`
+- go to `./pollerFunction` directory type `tsc index.ts``
+- if first time using cdk => `cdk bootstrap`
+- go back to root and do `cdk deploy` and take care of instructions from CDK
 
 ## Useful commands
 

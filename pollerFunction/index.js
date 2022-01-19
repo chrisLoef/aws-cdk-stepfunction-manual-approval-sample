@@ -73,9 +73,9 @@ exports.handler = function () { return __awaiter(void 0, void 0, void 0, functio
                                 Data: 'Hi!<br />' +
                                     input.employeeName + ' has been nominated for promotion!<br />' +
                                     'Can you please approve:<br />' +
-                                    "https://".concat(process.env.API_DEPLOYMENT_ID, ".execute-api.eu-central-1.amazonaws.com/prod/succeed?taskToken=") + encodeURIComponent(activityTask.taskToken) + '<br />' +
+                                    "https://".concat(process.env.API_DEPLOYMENT_ID, ".execute-api.").concat(process.env.REGION, ".amazonaws.com/prod/succeed?taskToken=") + encodeURIComponent(activityTask.taskToken) + '<br />' +
                                     'Or reject:<br />' +
-                                    "https://".concat(process.env.API_DEPLOYMENT_ID, ".execute-api.eu-central-1.amazonaws.com/prod/fail?taskToken=") + encodeURIComponent(activityTask.taskToken),
+                                    "https://".concat(process.env.API_DEPLOYMENT_ID, ".execute-api.").concat(process.env.REGION, ".amazonaws.com/prod/fail?taskToken=") + encodeURIComponent(activityTask.taskToken),
                                 Charset: 'UTF-8'
                             }
                         }
@@ -93,7 +93,7 @@ exports.handler = function () { return __awaiter(void 0, void 0, void 0, functio
             case 4:
                 console.log('No Active Activity');
                 return [2 /*return*/, 'Yes'];
-            case 5: return [2 /*return*/, 'No'];
+            case 5: return [2 /*return*/, 'No']; //Unreached
             case 6:
                 error_1 = _a.sent();
                 console.log(error_1);

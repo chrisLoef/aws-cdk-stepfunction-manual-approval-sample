@@ -47,7 +47,7 @@ exports.handler = async () => {
       console.log('No Active Activity');
       return 'Yes';
     }
-    return 'No';
+    return 'No'; //Unreached
     
   } catch (error) {
     console.log(error);
