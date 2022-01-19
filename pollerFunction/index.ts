@@ -28,9 +28,9 @@ exports.handler = async () => {
               Data: 'Hi!<br />' +
                 input.employeeName + ' has been nominated for promotion!<br />' +
                 'Can you please approve:<br />' +
-                `https://${process.env.API_DEPLOYMENT_ID}.execute-api.eu-central-1.amazonaws.com/prod/succeed?taskToken=` + encodeURIComponent(activityTask.taskToken) + '<br />' +
+                `https://${process.env.API_DEPLOYMENT_ID}.execute-api.${process.env.REGION}.amazonaws.com/prod/succeed?taskToken=` + encodeURIComponent(activityTask.taskToken) + '<br />' +
                 'Or reject:<br />' +
-                `https://${process.env.API_DEPLOYMENT_ID}.execute-api.eu-central-1.amazonaws.com/prod/fail?taskToken=` + encodeURIComponent(activityTask.taskToken),
+                `https://${process.env.API_DEPLOYMENT_ID}.execute-api.${process.env.REGION}.amazonaws.com/prod/fail?taskToken=` + encodeURIComponent(activityTask.taskToken),
               Charset: 'UTF-8'
             }
           }
